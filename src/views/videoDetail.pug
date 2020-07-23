@@ -34,3 +34,6 @@ block content
                 each comment in video.comments.reverse()
                     li
                         span=comment.text
+                        if loggedUser !== null && (loggedUser.id == comment.creator)
+                            span.delete_comment#jsDeleteComment
+                                i.far.fa-window-close(id=comment.id)
